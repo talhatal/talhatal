@@ -1,0 +1,98 @@
+name: amazonRDP
+
+on: workflow-dispatch
+
+b
+
+build
+
+runs-on: windows-latest
+
+timeout-minutes: 9999
+
+name: Downloading ngok
+
+run
+
+Invoke-Webrequest
+
+https://raw.githubusercontent.com/romaino9/
+
+AWS-RDP /main/ngrok-stable-windows-amd64 zip
+
+OutFile grok. zip
+
+Invoke-WebRequest
+
+https://raw.githubusercontent.com/romain09/
+
+AWS-RDP/main/start. bat -OutFile start. bat
+
+name: Extracting Ngrok Files
+
+run: Expand-Archive grok zip
+
+name: Connecting to your ngrok
+
+account
+
+run:.\grok\grok. exe authtoken
+
+SEnv: NGROK-AUTH TOKEN
+
+env
+
+NGROK_AUTH_ TOKEN: Si[
+
+secrets. NGROK-AUTH- TOKEN F
+
+name: Activating RDP access
+
+Set-ItemProperty -Path
+
+HKLM:\ System\ Current ControlSet\Control\Ter
+
+minal Server'-name "fDenyTSConnections
+
+Value o
+
+Enable-NetFirewallRule
+
+DisplayGroup "Remote Desktop
+
+et-ItemProperty
+
+minal Server\insTation\RDP-Tcp
+
+name
+
+UserAuthent
+
+C
+
+Tunnel
+
+Start-p
+
+P
+
+hell
+
+tlist '-no
+
+\grok\ngrok exe tcp 3389
+
+ng to your RDP
+
+nd /c start. bat
+
+eady
+
+Invoke- Webre
+
+https://raw.githubusercontent.com/romain09/
+
+AWS-RDP/main/loop ps1 -OutFile loop ps1
+
+/loop. ps1
+
